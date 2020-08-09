@@ -43,10 +43,10 @@ bot.DEFAULTPREFIX = DEFAULTPREFIX
 bot.news_api_key = secret_file["news api"]
 bot.main_channel_id = int(secret_file["main channel"])
 
-bot.new_ticket_channel_id = None
-bot.log_channel_id = None
-bot.category_id = None
-bot.staff_role_id = None
+bot.new_ticket_channel_id = 742101772553814126
+bot.log_channel_id = 742104772055793695
+bot.category_id = 742104671648350238
+bot.staff_role_id = 742104818029559948
 
 bot.colors = {
     "WHITE": 0xFFFFFF,
@@ -179,7 +179,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-extensions = ["cogs.help", "cogs.config", "cogs.gtts"]
+extensions = ["cogs.help", "cogs.config", "cogs.tickets"]
 if __name__ == "__main__":
     # Manual extension loading
     for extension in extensions:
