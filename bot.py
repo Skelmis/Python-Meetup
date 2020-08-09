@@ -40,6 +40,7 @@ bot = commands.Bot(
 )
 
 bot.DEFAULTPREFIX = DEFAULTPREFIX
+bot.news_api_key = secret_file["news api"]
 bot.colors = {
     "WHITE": 0xFFFFFF,
     "AQUA": 0x1ABC9C,
@@ -171,7 +172,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-extensions = ["cogs.help"]
+extensions = ["cogs.help", "cogs.news"]
 if __name__ == "__main__":
     # Manual extension loading
     for extension in extensions:
