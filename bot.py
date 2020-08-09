@@ -1,3 +1,4 @@
+import os
 import re
 import sys
 import traceback
@@ -182,23 +183,23 @@ async def on_message(message):
 extensions = ["cogs.help", "cogs.config"]
 if __name__ == "__main__":
     # Manual extension loading
-    for extension in extensions:
-        try:
-            bot.load_extension(extension)
-            print(f"Loaded {extension}")
-        except Exception as e:
-            print(f"Failed to load extension {extension}.", file=sys.stderr)
-            traceback.print_exc()
+    # for extension in extensions:
+    #     try:
+    #         bot.load_extension(extension)
+    #         print(f"Loaded {extension}")
+    #     except Exception as e:
+    #         print(f"Failed to load extension {extension}.", file=sys.stderr)
+    #         traceback.print_exc()
 
     # Automatic extension loading
-    # for ext in os.listdir("./cogs/"):
-    #     if ext.endswith(".py") and not ext.startswith("_"):
-    #         try:
-    #             bot.load_extension(f"cogs.{ext[:-3]}")
-    #         except Exception as e:
-    #             print(
-    #                 f"An error occurred while loading extension: cogs.{ext[:-3]}, {repr(e)}"
-    #            )
+    for ext in os.listdir("./cogs/"):
+        if ext.endswith(".py") and not ext.startswith("_"):
+            try:
+                bot.load_extension(f"cogs.{ext[:-3]}")
+            except Exception as e:
+                print(
+                    f"An error occurred while loading extension: cogs.{ext[:-3]}, {repr(e)}"
+                )
 
     # Actually start our bot
     bot.run(secret_file["token"])
