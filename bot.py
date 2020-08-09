@@ -173,7 +173,7 @@ async def on_message(message):
     await bot.process_commands(message)
 
 
-extensions = ["cogs.help", "cogs.news"]
+extensions = ["cogs.help", "cogs.config", "cogs.reminder"]
 if __name__ == "__main__":
     # Manual extension loading
     for extension in extensions:
