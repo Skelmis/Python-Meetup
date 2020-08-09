@@ -41,6 +41,7 @@ bot = commands.Bot(
 
 bot.DEFAULTPREFIX = DEFAULTPREFIX
 bot.news_api_key = secret_file["news api"]
+bot.main_channel_id = int(secret_file["main channel"])
 bot.colors = {
     "WHITE": 0xFFFFFF,
     "AQUA": 0x1ABC9C,
