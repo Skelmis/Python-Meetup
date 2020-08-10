@@ -1,0 +1,16 @@
+{
+	"data": [{
+		"keywords": ["module not found", "file not found"],
+		"response": "Your, error seems to be module not found, please type pip or pip3 install modulenamehere"
+	},
+
+	{
+		"keywords": ["not defined", "name is not defined", "variable is not defined"],
+		"response": "You are trying to call an underfiend variable or function.\n\n\n`print(var)`  #incorrect\n\n```var = 'HellO!'\n print(var) #Correct!```"
+	},
+
+	{
+		"keywords": ["improper token passed", "valid token passed"],
+		"response": "You are passing an invalid token, please make sure your token is the correct one. (To check go to https://discord.com/developers, and make click your application)"
+	}]
+}
