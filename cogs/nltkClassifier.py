@@ -24,6 +24,10 @@ class NltkClassifier(commands.Cog):
         if response is not None:
             await message.channel.send(response)
 
+    @commands.command(name="placeholder",)
+    async def placeholder(self):
+        return
+
 
 def setup(bot):
     bot.add_cog(NltkClassifier(bot))
